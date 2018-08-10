@@ -1,14 +1,17 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const config = require('./config.json');
 
 client.on("ready", () => {
   console.log("Let's get rolling!");
 });
 
+let selectedDice = "";
+
 client.on("message", (message) => {
-  if (message.content.startsWith("/d6")) {
-    message.channel.send("you rolled a d6!");
+  if (message.content.startsWith("/d")) {
+    message.channel.send(`you rolled a d${selectedDice}!`);
   }
 });
 
-client.login("NDc3NTE2ODU1NzA0Mjg5Mjgx.Dk9Tiw.c0f7trDIb2bdsnpWPTpH86CaBns");
+client.login(config.token);
