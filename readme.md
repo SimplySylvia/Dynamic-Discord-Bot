@@ -4,10 +4,16 @@ Made with node and discord.js
 
 Commands
 ```
-!d4
+!d [number]
 ```
-returns a response of d4
+returns a response of d[number] for dice selected
+
 ```
-!d6
+!user-info
 ```
-returns a response of d6
+returns user info
+
+```
+!ping
+```
+returns pong
