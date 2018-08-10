@@ -20,8 +20,4 @@ returns a response of rolling a dice sided by the number given.
 ```
 returns user info
 
-```
-!ping
-```
-returns pong
 
