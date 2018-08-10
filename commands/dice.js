@@ -6,6 +6,15 @@ module.exports = {
     aliases: ['d'],
     execute(message, args) {
         var output = Math.floor(Math.random() * args[0]) + 1
-        message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got ${output}`);
+
+        if (output == args[0]){
+            message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL SUCCESS! ${output}`);
+        }
+        else if (output === 1) {
+            message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL FAILURE! ${output}`);
+        } else {
+            message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got ${output}`);
+        }
+        
     },
 };
