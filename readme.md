@@ -6,7 +6,7 @@ Commands
 ```
 !d [number]
 ```
-returns a response of d[number] for dice selected
+returns a response of rolling a dice sided by the number given.
 
 ```
 !user-info
