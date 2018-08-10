@@ -1,4 +1,5 @@
-### Discord Dice Bot
+### <img src="./assets/Discord_logo.png" width="60px"> Discord Dice Bot
+***
 
 Made with node and discord.js
 
