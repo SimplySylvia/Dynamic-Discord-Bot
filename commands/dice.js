@@ -10,25 +10,30 @@ module.exports = {
     usage: '<dice number of sides>',
     aliases: ['d'],
     execute(message, args) {
-        var output = Math.floor(Math.random() * args[0]) + 1
+        let num = Number(args[0])
+        console.log(typeof num);
+        let output = Math.floor(Math.random() * num) + 1
 
-        if (output == args[0]){
-            giphy.random('success').then(function (res) {
-                message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL SUCCESS! ${output}`,{
-                    file: res.data.image_url,
+        if(isNaN(num) == false){
+            if (output === num){
+                giphy.random({tag:'success',rating:'pg'}).then(function (res) {
+                    message.channel.send(`${message.author.username} rolled a d${num}!\nAnd got...\nCRITICAL SUCCESS! ${output}`,{
+                        file: res.data.image_url,
+                    });
+                });  
+            }
+            else if (output === 1) {
+                giphy.random({tag:'fail',rating:'pg'}).then(function (res) {
+                    message.channel.send(`${message.author.username} rolled a d${num}!\nAnd got...\nCRITICAL FAIL! ${output}`,{
+                        file: res.data.image_url,
+                    });
                 });
-            });  
+            } 
+            else {
+                message.channel.send(`${message.author.username} rolled a d${num}!\nAnd got ${output}`);
+            }
+        } else {
+            message.channel.send(`${message.author.username} must enter a number for this command. !d [number]`);
         }
-        else if (output === 1) {
-            giphy.random('fail').then(function (res) {
-                message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL FAIL! ${output}`,{
-                    file: res.data.image_url,
-                });
-            });
-        } 
-        else {
-            message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got ${output}`);
-        }
-        
     },
 };
