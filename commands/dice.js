@@ -11,6 +11,9 @@ module.exports = {
         var output = Math.floor(Math.random() * args[0]) + 1
 
         if (output == args[0]){
+            
+            const res = got(`http://api.giphy.com/v1/gifs/random?api_key=${api}&tag=win`)
+
             message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL SUCCESS! ${output}`,{
                 file: 'https://media.giphy.com/media/aWRWTF27ilPzy/giphy.gif',
             });
