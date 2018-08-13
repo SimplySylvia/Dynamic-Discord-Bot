@@ -11,12 +11,11 @@ module.exports = {
     aliases: ['d'],
     execute(message, args) {
         let num = Number(args[0])
-        console.log(typeof num);
         let output = Math.floor(Math.random() * num) + 1
 
         if(isNaN(num) == false){
             if (output === num){
-                giphy.random({tag:'success',rating:'pg'}).then(function (res) {
+                giphy.random({tag:'win',rating:'pg'}).then(function (res) {
                     message.channel.send(`${message.author.username} rolled a d${num}!\nAnd got...\nCRITICAL SUCCESS! ${output}`,{
                         file: res.data.image_url,
                     });
