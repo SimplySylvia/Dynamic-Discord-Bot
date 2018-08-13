@@ -1,6 +1,8 @@
 const got = require('got');
 const { api } = require('../config.json');
 
+const giphy = require('giphy-api')(api);
+
 module.exports = {
     name: 'dice',
     description: 'Rolls a die based on the input given.',
@@ -11,16 +13,17 @@ module.exports = {
         var output = Math.floor(Math.random() * args[0]) + 1
 
         if (output == args[0]){
-            
-            const res = got(`http://api.giphy.com/v1/gifs/random?api_key=${api}&tag=win`)
-
-            message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL SUCCESS! ${output}`,{
-                file: 'https://media.giphy.com/media/aWRWTF27ilPzy/giphy.gif',
-            });
+            giphy.random('success').then(function (res) {
+                message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL SUCCESS! ${output}`,{
+                    file: res.data.image_url,
+                });
+            });  
         }
         else if (output === 1) {
-            message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL FAILURE! ${output}`,{
-                file: 'https://media.giphy.com/media/duexIlfr9yYwYE23UA/giphy.gif',
+            giphy.random('fail').then(function (res) {
+                message.channel.send(`${message.author.username} rolled a d${args[0]}!\nAnd got...\nCRITICAL FAIL! ${output}`,{
+                    file: res.data.image_url,
+                });
             });
         } 
         else {
