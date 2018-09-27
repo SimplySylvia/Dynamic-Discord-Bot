@@ -1,6 +1,8 @@
 ### <img src="./assets/Discord_logo.png" width="60px"> Discord Dice Bot
 ***
 
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+
 Made with node and discord.js
 
 Commands
@@ -14,7 +16,7 @@ Will direct message the user a help thread and all commands broken down.
 !d [number]
 !dice [number]
 ```
-returns a response of rolling a dice sided by the number given.
+returns a response of rolling a dice sided by the number given. If critical success or critical failure will display a gif from giphy api.
 
 ```
 !user-info
