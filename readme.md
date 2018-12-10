@@ -1,4 +1,7 @@
 ### <img src="./assets/Discord_logo.png" width="60px"> Discord Dice Bot
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/DaltonHart/Dice-Discord-Bot.svg)](https://greenkeeper.io/)
+
 ***
 
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
