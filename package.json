@@ -23,7 +23,7 @@
   "homepage": "https://github.com/DaltonHart/Dice-Discord-Bot#readme",
   "dependencies": {
     "discord.js": "^11.4.0",
-    "giphy-api": "^1.2.7",
+    "giphy-api": "^2.0.1",
     "got": "^9.0.0"
   }
 }
